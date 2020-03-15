@@ -1,0 +1,15 @@
+<launch>
+
+     <include file="$(find slam_lidar)/launch/slam.launch">
+     <arg name="slam_methods" default="cartographer_vlp16" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration, cartographer_vlp16]"/>
+  
+  </include>
+
+    
+
+    <include file="$(find omtb_map_extension_plugin)/launch/automove.launch">
+ <arg name="room_name" default="room_z" doc="room type [room_l,room_y,room_z]" />
+  </include>
+    
+  
+</launch>

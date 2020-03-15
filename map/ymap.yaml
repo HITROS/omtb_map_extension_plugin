@@ -1,0 +1,6 @@
+image: /home/sparta/catkin_slam/src/omtb_map_extension_plugin/map/ymap.pgm
+resolution: 0.050000
+origin: [-6.250000, -2.350000, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

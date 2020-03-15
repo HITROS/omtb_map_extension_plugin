@@ -1,0 +1,19 @@
+<launch>
+  <arg name="model" default="waffle" doc="model type [burger, waffle, waffle_pi]"/>
+  <param name="model" value="$(arg model)"/>
+  <arg name="use_robot_name1" default="robot1"/>
+  <arg name="room_name" default="room_l" doc="room type [room_l,room_y,room_z]" />
+
+  <group ns="$(arg use_robot_name1)">
+    <param name="tf_prefix" value="$(arg use_robot_name1)"/>
+
+    <!-- move in routine -->
+    <node pkg="omtb_map_extension_plugin" type="$(arg room_name).py" name="automove" output="screen">
+    </node>
+
+    <!-- save bag what you want -->
+    <node pkg="omtb_map_extension_plugin" type="save_bag_$(arg room_name).py" name="justrecord" output="screen">
+    </node>
+
+  </group>
+</launch>

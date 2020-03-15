@@ -1,0 +1,14 @@
+<launch>
+ <arg name="use_robot_name1" default="robot1"/>
+
+
+   <include file="$(find omtb_map_extension_plugin)/launch/room.launch">
+<arg name="room_name" default="room_z" doc="room type [room_l,room_y,room_z]" /> 
+<arg name="gui" default="false" doc="gui type [true,false]"/>
+  </include>
+  
+     
+
+   
+  
+</launch>

@@ -1,0 +1,26 @@
+<launch>
+  <arg name="use_robot_name1" default="robot1"/>
+  
+  
+   
+  
+  <include file="$(find omtb_map_extension_plugin)/launch/room.launch">
+<arg name="room_name" default="room_z" doc="room type [room_l,room_y,room_z]" />
+<arg name="gui" default="false" doc="gui type [true,false]"/>
+  </include>
+  
+  <include file="$(find slam_lidar)/launch/slam.launch">
+     <arg name="slam_methods" default="cartographer_vlp16" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration, cartographer_vlp16]"/>
+  
+  </include>
+
+    
+
+    <include file="$(find omtb_map_extension_plugin)/launch/automove.launch">
+  <arg name="room_name" default="room_z" doc="room type [room_l,room_y,room_z]" />
+  </include>
+    
+   
+ 
+  
+</launch>
